@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Le Boucher">
+<meta name="theme-color" content="#2f5a2a">
+<title>Le Boucher</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪓</text></svg>">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="overlays"></div>
+<div id="hurt"></div>
+
+<div id="hud">
+  <div id="topleft">
+    <div id="island">ÎLE 1</div>
+    <div id="zoneName">Prairie</div>
+    <div id="stats"></div>
+  </div>
+  <div id="objective"></div>
+  <div id="mapwrap"><canvas id="minimap"></canvas><button id="zoomBtn" aria-label="Zoom">🔍</button></div>
+  <div id="sidebtns">
+    <button id="bagBtn" class="sidebtn" aria-label="Inventaire"><span>🎒</span></button>
+  </div>
+  <div id="joy"><div id="joyKnob"></div></div>
+</div>
+
+<div id="slotsWrap">
+  <div id="slotsTitle" class="outline">Équipé</div>
+  <div id="slots"></div>
+  <div id="slotsHint"></div>
+</div>
+
+<div id="banner" class="hidden"><div id="bannerTitle" class="outline"></div><div id="bannerSub" class="outline"></div></div>
+<div id="toast" class="hidden"></div>
+
+<div id="inventory" class="hidden">
+  <div class="panel wood">
+    <div class="panelHead"><div class="panelTitle outline">INVENTAIRE</div><button class="closeBtn" data-close="inventory">✕</button></div>
+    <div id="statGrid"></div>
+    <div class="sectionTitle outline">ARMES</div>
+    <div id="weaponGrid"></div>
+    <div class="settings">
+      <button id="soundBtn" class="smallBtn"></button>
+      <button id="resetBtn" class="smallBtn danger">↺ Recommencer</button>
+    </div>
+  </div>
+</div>
+
+<div id="weaponModal" class="hidden modalBg">
+  <div class="card wood">
+    <button class="closeBtn" data-close="weaponModal">✕</button>
+    <div class="wHead">
+      <div class="wIcon"><img id="wmIcon" alt=""><span id="wmCopies" class="badge outline"></span></div>
+      <div class="wTitle outline" id="wmName"></div>
+    </div>
+    <div class="wTags"><span id="wmRarity"></span><span id="wmType"></span></div>
+    <div class="wDmg"><span class="outline">Dégâts par coup</span><span id="wmDmg" class="outline"></span></div>
+    <div class="wSub"><span>Recharge <b id="wmCd"></b></span><span>Portée <b id="wmRange"></b></span><span>Par copie <b>+10%</b></span></div>
+    <div class="wText" id="wmText"></div>
+    <div class="wBtns">
+      <button id="wmEvolve" class="bigBtn purple"></button>
+      <button id="wmEquip" class="bigBtn yellow"></button>
+    </div>
+  </div>
+</div>
+
+<div id="confirm" class="hidden modalBg">
+  <div class="card wood small">
+    <div class="wTitle outline" id="cfTitle"></div>
+    <div class="wText" id="cfText"></div>
+    <div class="wBtns">
+      <button id="cfNo" class="bigBtn grey">Annuler</button>
+      <button id="cfYes" class="bigBtn yellow">Oui</button>
+    </div>
+  </div>
+</div>
+
+<div id="ko" class="hidden"><div class="outline">K.O. !</div><small class="outline">Retour au camp…</small></div>
+
+<div id="title">
+  <div id="logo" class="outline">LE<br>BOUCHER</div>
+  <div id="tagline" class="outline">Tranche, grandis, avance.</div>
+  <button id="playBtn" class="bigBtn yellow">JOUER</button>
+  <div id="howto">Déplace-toi avec le doigt, le boucher frappe tout seul.<br>Chaque ennemi vaincu donne un bonus : ⚔️ attaque, ❤️ santé, ✚ régénération, 👟 vitesse, ⚡ cadence.<br>Bats les mini-boss pour gagner des armes et ouvrir la zone suivante.</div>
+</div>
+
+<div id="err" class="hidden"></div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
