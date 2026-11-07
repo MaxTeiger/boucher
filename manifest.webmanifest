@@ -1,0 +1,10 @@
+{
+  "name": "Le Boucher",
+  "short_name": "Le Boucher",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2f5a2a",
+  "theme_color": "#2f5a2a",
+  "icons": [{ "src": "icon.png", "sizes": "180x180", "type": "image/png" }]
+}

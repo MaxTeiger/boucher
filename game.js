@@ -1704,6 +1704,7 @@ function frame(now) {
 }
 
 // ============================================================ démarrage
+if ('serviceWorker' in navigator && !TEST && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
 renderSlots();
 $('#playBtn').textContent = save.started ? 'CONTINUER' : 'JOUER';
 $('#playBtn').onclick = () => {
