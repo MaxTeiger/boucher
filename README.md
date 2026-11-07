@@ -22,7 +22,8 @@ Mort : retour au camp avec ses stats. Sauvegarde automatique dans `localStorage`
 
 - `index.html`, `style.css`, `game.js` : tout le jeu (modèles 3D faits de primitives).
 - `vendor/three.module.min.js` (Three.js r170) et `vendor/lilita.woff2` (police Lilita One, OFL) : copiés en local.
-- `icon.png` : icône d'écran d'accueil iOS.
+- `icon.png`, `manifest.webmanifest` : icône et mode plein écran.
+- `sw.js` : service worker, jeu jouable hors ligne après une première visite. Il sert la version en cache puis la met à jour en arrière-plan (une nouvelle version apparaît au lancement suivant). Penser à changer `CACHE` si la liste des fichiers change.
 
 ## Tests et équilibrage
 
